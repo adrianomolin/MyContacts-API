@@ -5,14 +5,7 @@ const CategoryController = require('./app/controllers/CategoryController');
 
 const router = Router();
 
-router.get(
-  '/contacts',
-  (request, response, next) => {
-    request.appId = 'MeuAppID';
-    next();
-  },
-  ContactController.index,
-); // criar rota no express
+router.get('/contacts', ContactController.index); // criar rota no express
 router.get('/contacts/:id', ContactController.show);
 router.delete('/contacts/:id', ContactController.delete);
 router.post('/contacts', ContactController.store);
